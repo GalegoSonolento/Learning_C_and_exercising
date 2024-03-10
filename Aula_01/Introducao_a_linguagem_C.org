@@ -1,0 +1,72 @@
+* Breve Histórico
+- Dennis Ritchie, 1972
+- C Programming Language - Brian Kernighan e Dennis Ritchie, 1978
+- ANSI (American National Standards Institute) C, C89 ou C90 - 1989
+- ISO (International Standards Organization) /IEC 9899:1999 - C99
+Apesar de bastante antiga e participante dos primeiros programas de computador escritos durante a década de 70, ainda é bastante sólida e marcante entre programadores.
+Tenha em mente porém que ela tem muitos pontos de cuidado, como segurança e o fato de tudo que você utilizar precisar ser descartado depois, a não ser que queira fritar o sistema ou deixar uma brecha de rede.
+
+* Características da Linguagem
+- A maior bibioteca de C é a Standard C Llibrary onde a maioria dos pacotes estão
+- Bastante portável e leve
+- Linguagem compilada, portanto deve ter um arquivo de compilação sempre junto de si.
+
+* Exemplo de um programa em C
+#+begin_src hello
+  /* Código C que apenas escreve 'Hello World' na saída
+  do terminal */
+
+  #include <stdio.h>            // inclusão de definições
+
+  int main()                    // função pincipal
+  {
+    printf("Hello, World!\n");  // função de entrada/saída
+    return 0;                   // returno (fim) da função
+  }
+#+end_src
+
+- *#include* manda o processador inlcuir o arquivo stdio.h que contém funções de E/S
+- Blocos de código são delimitados por *{}*
+- Como *main* é uma função, ele deve retornar algo (linha *return*)
+- Comentários podem ser feitos com /**/ ou //
+Para compilar um código em C, basta:
+#+begin_src
+gcc FileName.c -o FileName
+./FileName
+Hello, World!
+#+end_src
+
+* Estrutura de um programa em C
+- Comandos do processador (linhas com *#*)
+- Comentários
+- Definição de funções
+- Definição de variáveis e tipos
+- Comandos e expresões
+
+#+begin_src
+/*
+Calcula a soma e a média de dois inteiros,
+escrevendo o resultado na saída padrão.
+*/
+
+#include <stdio.h>
+
+int main ()
+{
+    int a, b, soma;
+    float media;
+
+    a = 10;
+    b = 43;
+
+    soma = a + b;
+    media = soma / 2.0
+
+    printf("A soma de %d e %d vale %d\n", a, b, soma);
+    printf("A media de %d e %d vale %f\", a, b, media);
+
+    return (0);
+}
+#+end_src
+
+Sempre que quiser colocar um bloco de testo em um código, atente-se para dizer *o que* ele faz e não *como*. Este deveria estar já bastante claro.

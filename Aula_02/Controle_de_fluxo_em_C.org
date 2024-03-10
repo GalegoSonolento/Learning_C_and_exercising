@@ -1,0 +1,162 @@
+* Decisões
+** Comando if
+#+begin_src
+if (expression)
+    command;
+#+end_src
+ou ainda
+#+begin_src
+if (expression)
+{
+    command;
+    command;
+    ...
+}
+#+end_src
+Expressões if funcionam com qualquer coisa que possa ser validada como um booleano.
+
+*** Ifs aninhados
+#+begin_src
+if (expression)
+    if (expression)
+    {
+        command;
+        command;
+        ...
+    }
+#+end_src
+
+** Comando if-else
+#+begin_src
+if (expression)
+    command1;   // <------ there is a semicolon here!
+else
+    command2;
+#+end_src
+ou ainda
+#+begin_src
+if (expression)
+{
+    command1a;
+    command1b;
+    command1c;
+}
+else
+{
+    command2a;
+    command2b;
+}
+#+end_src
+
+*** if-else aninhados
+#+begin_src
+if (expression)
+    if (expression)
+        command1;
+    else
+        command2;
+else
+    command3;
+#+end_src
+Tenha em mente que o else sempre responde pra última cláusula if em aberto. Se quiser dar uma brincada e fazer diferente, use ({...})
+
+** Comando Switch
+#+begin_src
+switch (expression)
+{
+    case constant1:
+        command1;
+        ...
+        break;
+    case constant2:
+        command2;
+        ...
+        break;
+    case constant3:
+    case constant4:
+        command34a;
+        ...
+        break;
+    ...
+    default:
+        commandNa;
+        ...
+        break;
+}
+#+end_src
+Um exemplo prático pode ser uma contagem de carros:
+#+begin_src
+ch = getchar();
+
+switch(ch)
+{
+    case 'C':
+    case 'c':
+        corsa++;
+        break;
+    case 'P':
+        prisma++;
+        break;
+    case 'p':
+        palio++;
+        break;
+    default:
+        outros++;
+        break;
+}
+#+end_src
+Comando interessante (fica mais barato que vários ifs em algumas situações)
+
+** Comando condicional ternário
+A expressão
+#+begin_src
+expresion1 ? expression2 : expression3;
+#+end_src
+é equivalente a:
+#+begin_src
+if (expresion1)
+    expression2;
+else
+    expression3;
+#+end_src
+Exemplo:
+#+begin_src
+x = x < 5 ? x + 1 : 1;
+#+end_src
+equivale a:
+#+begin_src
+if (x<5)
+    x = x + 1;
+else
+    x = 1;
+#end_src
+
+* Laços
+Comandos que geram ações repetidas
+
+** Comando while
+#+begin_src
+while (expresion)
+    command;
+#+end_src
+ou 
+#+begin_src
+while (expresion)
+{
+    command1;
+    command2;
+    command3;
+    ...
+}
+#+end_src
+Exemplo:
+#+begin_src
+i = 0;
+while (i < 100)
+{
+    printf("i vale $d\n", i);
+    i++;
+}
+#+end_src
+
+** Comando do-while
